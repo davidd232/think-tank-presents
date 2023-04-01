@@ -7,12 +7,24 @@ export function ListingSlider() {
 
   const allListings = listings;
 
-  function onClickHandler () {
-    console.log('clicked. We remmember')
+  function clickNext () {
+    const isLast = currentIndex === allListings.length - 1;
+    const nextIndex = isLast ? 0 : currentIndex + 1;
+    setCurrentIndex(nextIndex);
+  }
+
+  function clickPrev () {
+    const isFirst = currentIndex === 0;
+    const nextIndex = isFirst ? allListings.length - 1 : currentIndex - 1;
+    setCurrentIndex(nextIndex);
   }
   return (
     <div>
-      <Listing listing={allListings[currentIndex]}/>
+      <Listing 
+        listing={allListings[currentIndex]}
+        clickNext={clickNext}
+        clickPrev={clickPrev}   
+      />
     </div>
   );
 }

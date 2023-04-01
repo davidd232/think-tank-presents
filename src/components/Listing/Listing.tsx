@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 type listing = {
   name: string,
   location: string,
@@ -5,7 +7,7 @@ type listing = {
 }
 
 
-export function Listing({ listing }: {listing: listing}) {
+export function Listing({ listing, clickNext, clickPrev }: {listing: listing, clickNext: MouseEventHandler, clickPrev: MouseEventHandler}) {
 
   return (
     <div>
@@ -13,8 +15,8 @@ export function Listing({ listing }: {listing: listing}) {
       <div>{listing.name}</div>
       <div>{listing.location}</div>
       <img src={listing.url}></img>
-      <div>{'<'}</div>
-      <div>{'>'}</div>
+      <div onClick={clickPrev}>{'<'}</div>
+      <div onClick={clickNext}>{'>'}</div>
     </div>
   );
 }
