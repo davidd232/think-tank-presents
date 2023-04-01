@@ -6,8 +6,16 @@ type listing = {
   url: string
 }
 
-
-export function Listing({ listing, clickNext, clickPrev }: {listing: listing, clickNext: MouseEventHandler, clickPrev: MouseEventHandler}) {
+export function Listing({ 
+  listing, 
+  clickNext, 
+  clickPrev 
+}: 
+{
+  listing: listing, 
+  clickNext: MouseEventHandler, 
+  clickPrev: MouseEventHandler
+}) {
 
   return (
     <div>
