@@ -14,7 +14,7 @@ export function Listing({ listing, clickNext, clickPrev }: {listing: listing, cl
       <h1>David</h1>
       <div>{listing.name}</div>
       <div>{listing.location}</div>
-      <img src={listing.url}></img>
+      <img src={listing.url} alt="a house"></img>
       <div onClick={clickPrev}>{'<'}</div>
       <div onClick={clickNext}>{'>'}</div>
     </div>
