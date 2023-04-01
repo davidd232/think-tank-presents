@@ -1,10 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+This is a site for Think Tank Presents to allow for direct bookings and tracking of progress in each stay.
 
 ### `npm start`
 
