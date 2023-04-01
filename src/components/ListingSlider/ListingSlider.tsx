@@ -12,7 +12,7 @@ export function ListingSlider() {
   }
   return (
     <div>
-      <Listing />
+      <Listing listing={allListings[currentIndex]}/>
     </div>
   );
 }
