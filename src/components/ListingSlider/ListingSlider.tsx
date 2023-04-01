@@ -1,14 +1,18 @@
 import { useState } from "react";
+import * as listings from '../../listings.json';
+import { Listing } from '../Listing/Listing';
 
 export function ListingSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const allListings = listings;
 
   function onClickHandler () {
     console.log('clicked. We remmember')
   }
   return (
     <div>
-      <h1 onClick={onClickHandler}>David</h1>
+      <Listing />
     </div>
   );
 }

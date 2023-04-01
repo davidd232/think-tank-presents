@@ -1,0 +1,27 @@
+[
+  {
+    "name": "test1",
+    "location": "Florida",
+    "url": "https://media.cntraveler.com/photos/60e630bb82d079b244790d58/16:9/w_2580,c_limit/airbnb%2024752152.jpeg"
+  },
+  {
+    "name": "test2",
+    "location": "Illinois",
+    "url": "https://media.cntraveler.com/photos/60e630bb82d079b244790d58/16:9/w_2580,c_limit/airbnb%2024752152.jpeg"
+  },
+  {
+    "name": "test3",
+    "location": "Oregon",
+    "url": "https://media.cntraveler.com/photos/60e630bb82d079b244790d58/16:9/w_2580,c_limit/airbnb%2024752152.jpeg"
+  },
+  {
+    "name": "test4",
+    "location": "Missouri",
+    "url": "https://media.cntraveler.com/photos/60e630bb82d079b244790d58/16:9/w_2580,c_limit/airbnb%2024752152.jpeg"
+  },
+  {
+    "name": "test5",
+    "location": "Georgia",
+    "url": "https://media.cntraveler.com/photos/60e630bb82d079b244790d58/16:9/w_2580,c_limit/airbnb%2024752152.jpeg"
+  }
+]
