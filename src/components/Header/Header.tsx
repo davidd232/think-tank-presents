@@ -7,7 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
   
 export function Header() {
   return (
-      <AppBar position="static">
+      <AppBar sx={{ bgcolor: "black" }} position="static">
         <Toolbar>
           <IconButton
             size="large"
