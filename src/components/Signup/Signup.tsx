@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, app } from '../../firebase';
 
@@ -30,13 +30,20 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export function SignUp() {
+  const navigate = useNavigate();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get('email') as string;
     const password = data.get('password') as string;
 
+    if (!email || !password) return;
+
     const createdUser = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(`${createdUser.user}`);
+    if (createdUser) {
+      return navigate('/');
+    }
   };
 
   return (
