@@ -1,13 +1,14 @@
 import './App.css';
-import { ListingSlider } from './components/ListingSlider/ListingSlider';
-import { Header } from './components/Header/Header';
+import { Routes, Route } from "react-router-dom";
+import { Login } from './components/Login/Login';
+import { Main } from './components/Main/Main';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      {/* <ListingSlider /> */}
-    </div>
+    <Routes>
+      <Route path='/' element={<Main />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }
 

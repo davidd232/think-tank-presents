@@ -4,11 +4,15 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Login } from '../Login/Login';
+import { Link } from 'react-router-dom';
 
 import { app, auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
   
 export function Header() {
+
+
   return (
       <AppBar sx={{ bgcolor: "black" }} position="static">
         <Toolbar>
@@ -25,7 +29,7 @@ export function Header() {
             component="div" sx={{ flexGrow: 1 }}>
             Think Tank Presents
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Link to='/login'>Login</Link>
         </Toolbar>
       </AppBar>
   );
