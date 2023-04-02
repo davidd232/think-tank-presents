@@ -37,14 +37,10 @@ export function Login() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const email = data.get('email');
-    const password = data.get('password');
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const email = data.get('email') as string;
+    const password = data.get('password') as string;
 
-    const user = await signInWithEmailAndPassword(auth, email as string, password as string)
+    const user = await signInWithEmailAndPassword(auth, email, password);
   };
 
   return (
