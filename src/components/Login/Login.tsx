@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, app } from '../../firebase';
+import { AuthContext } from '../../services/Auth/AuthContext';
 
 
 function Copyright(props: any) {
@@ -31,10 +32,14 @@ function Copyright(props: any) {
   );
 }
 
+
+
 const theme = createTheme();
 
 export function Login() {
   const navigate = useNavigate();
+  const authContext = React.useContext(AuthContext);
+  console.log(authContext.user);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
