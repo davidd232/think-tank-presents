@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, FormEvent } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, app } from '../../firebase';
+import { AuthContext } from '../../services/Auth/AuthContext';
 
 function Copyright(props: any) {
   return (
@@ -31,7 +32,8 @@ const theme = createTheme();
 
 export function SignUp() {
   const navigate = useNavigate();
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const authContext = useContext(AuthContext);
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get('email') as string;

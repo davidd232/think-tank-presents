@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, FormEvent } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -38,10 +38,10 @@ const theme = createTheme();
 
 export function Login() {
   const navigate = useNavigate();
-  const authContext = React.useContext(AuthContext);
+  const authContext = useContext(AuthContext);
   console.log(authContext.user);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get('email') as string;
