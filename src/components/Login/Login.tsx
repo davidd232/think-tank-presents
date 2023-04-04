@@ -15,7 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth, app } from '../../firebase';
+import { auth, db } from '../../firebase';
 import { AuthContext } from '../../services/Auth/AuthContext';
 
 
@@ -36,6 +36,8 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
+// JUST HAVE THIS END UP CALLING OUR SETUSER FUNCTION WITH ALL THE DATA
+// User logs in, handle all firebase auth/db logic and then use authContext to setUser
 export function Login() {
   const navigate = useNavigate();
   const authContext = useContext(AuthContext);
