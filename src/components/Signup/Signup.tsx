@@ -12,6 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { ref, set } from 'firebase/database';
 import { auth, db } from '../../firebase';
 import { AuthContext } from '../../services/Auth/AuthContext';
 
@@ -43,9 +44,20 @@ export function SignUp() {
 
     if (!email || !password) return;
 
-    const createdUser = await createUserWithEmailAndPassword(auth, email, password);
-    console.log(`${createdUser.user}`);
+    const {user: createdUser} = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(`${createdUser}`);
     if (createdUser) {
+      set(ref(db, 'users/' + createdUser.uid), {
+        experiences: {
+          stl: {
+            done: false
+          },
+          jax: {
+            done: false
+          }
+        },
+        email: createdUser.email,
+      });
       return navigate('/');
     }
   };

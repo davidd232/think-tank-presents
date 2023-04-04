@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { child, get, set } from 'firebase/database';
 import { auth, db } from '../../firebase';
 import { AuthContext } from '../../services/Auth/AuthContext';
 
@@ -51,7 +52,7 @@ export function Login() {
 
     if (!email || !password) return;
 
-    const user = await signInWithEmailAndPassword(auth, email, password);
+    const {user} = await signInWithEmailAndPassword(auth, email, password);
 
     if (user) {
       return navigate('/');
