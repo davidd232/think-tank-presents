@@ -55,6 +55,7 @@ export function Login() {
     const { user } = await signInWithEmailAndPassword(auth, email, password);
 
     if (user) {
+      authContext.setUser(user);
       return navigate('/');
     }
   };

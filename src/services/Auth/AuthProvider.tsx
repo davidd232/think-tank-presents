@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { AuthContext } from './AuthContext';
 
 interface AuthProviderProps {
@@ -6,12 +6,13 @@ interface AuthProviderProps {
 }
 
 export function AuthProvider (props: AuthProviderProps) {
-  const { children } = props
+  const { children } = props;
+  const [user, setUser] = useState(null);
 
   return (
     <AuthContext.Provider value={{
-      user: null,
-      setUser: () => {}
+      user,
+      setUser
     }}>
       {children}
     </AuthContext.Provider>
