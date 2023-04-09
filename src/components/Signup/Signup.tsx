@@ -15,19 +15,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import { auth, db } from '../../firebase';
 import { AuthContext } from '../../services/Auth/AuthContext';
-
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color='inherit' to='/'>
-        Think Tank Presents
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { Copyright } from '../Copyright';
 
 const theme = createTheme();
 
