@@ -4,13 +4,16 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Login } from '../Login/Login';
 import { Link } from 'react-router-dom';
+import { useContext } from "react";
 
 import { app, auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { AuthContext } from "../../services/Auth/AuthContext";
+import { Logout } from '../Logout/Logout';
   
 export function Header() {
+  const { user } = useContext(AuthContext)
 
 
   return (
@@ -29,7 +32,18 @@ export function Header() {
             component="div" sx={{ flexGrow: 1 }}>
             Think Tank Presents
           </Typography>
-          <Link to='/login'>Login</Link>
+          {!user && 
+            <IconButton 
+              size="small"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <Link style={{textDecoration: 'none', color: 'inherit'}} to='/login'>Login</Link>
+            </IconButton>
+          }
+          {user && <Logout />}
         </Toolbar>
       </AppBar>
   );
