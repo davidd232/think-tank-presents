@@ -47,17 +47,7 @@ export function SignUp() {
     const {user: createdUser} = await createUserWithEmailAndPassword(auth, email, password);
     console.log(`${createdUser}`);
     if (createdUser) {
-      set(ref(db, 'users/' + createdUser.uid), {
-        experiences: {
-          stl: {
-            done: false
-          },
-          jax: {
-            done: false
-          }
-        },
-        email: createdUser.email,
-      });
+      
       return navigate('/');
     }
   };

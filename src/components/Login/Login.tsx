@@ -52,7 +52,7 @@ export function Login() {
 
     if (!email || !password) return;
 
-    const {user} = await signInWithEmailAndPassword(auth, email, password);
+    const { user } = await signInWithEmailAndPassword(auth, email, password);
 
     if (user) {
       return navigate('/');

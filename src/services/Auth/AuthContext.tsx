@@ -1,11 +1,12 @@
 import { createContext } from 'react';
+import { User } from 'firebase/auth';
 
 interface AuthContext {
-  user: string,
+  user: User | null,
   setUser: Function
 }
 
 export const AuthContext = createContext<AuthContext>({
-  user: '',
+  user: null,
   setUser: () => {}
 });
